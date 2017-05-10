@@ -32,6 +32,5 @@ public class TradeComissions {
 		} else {
 			System.out.println("error");
 		}
-		}
-
 	}
+}
