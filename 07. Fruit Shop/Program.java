@@ -6,12 +6,12 @@ public class FruitOrVegetable {
 	public static void main(String[] args) {
 		Scanner console = new Scanner(System.in);
 		
-		String fruit = console.nextLine();
-		String day = console.nextLine();
+		String fruit = console.nextLine().toLowerCase();
+		String day = console.nextLine().toLowerCase();
 		double quantity = Double.parseDouble(console.nextLine());
-		double price = 0;
+		double price = -1.0;
 		
-		if (day.equals("Saturday") || day.equals("Sunday")) {
+		if (day.equals("saturday") || day.equals("sunday")) {
 			if (fruit.equals("banana")) price = 2.70;
 			else if (fruit.equals("apple")) price = 1.25;
 			else if (fruit.equals("orange")) price = 0.90;
@@ -19,7 +19,7 @@ public class FruitOrVegetable {
 			else if (fruit.equals("kiwi")) price = 3.00;
 			else if (fruit.equals("pineapple")) price = 5.60;
 			else if (fruit.equals("grapes")) price = 4.20;
-		} else if (day.equals("Monday") || day.equals("Tuesday") || day.equals("Wednesday") || day.equals("Thursday") || day.equals("Friday")){
+		} else if (day.equals("monday") || day.equals("tuesday") || day.equals("wednesday") || day.equals("thursday") || day.equals("friday")){
 			if (fruit.equals("banana")) price = 2.50;
 			else if (fruit.equals("apple")) price = 1.20;
 			else if (fruit.equals("orange")) price = 0.85;
@@ -30,7 +30,12 @@ public class FruitOrVegetable {
 		} else {
 			System.out.println("error");
 		}
-		System.out.printf("%.2f", price * quantity);
+		
+		if (price >= 0) {
+			System.out.println(price * quantity);
+		} else {
+			System.out.println("error");
+		}
 	}
-
 }
+
